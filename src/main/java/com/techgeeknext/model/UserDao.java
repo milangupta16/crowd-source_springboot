@@ -2,15 +2,15 @@ package com.techgeeknext.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
 public class UserDao {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    @Column
     private String username;
+
     @Column
     @JsonIgnore
     private String password;
@@ -24,7 +24,17 @@ public class UserDao {
     @Column
     private String lastName;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "username_fk", referencedColumnName = "username")
+    List<ItemsDao> items = new ArrayList<ItemsDao>();
 
+    public List<ItemsDao> getItems() {
+        return items;
+    }
+
+    public void setItems(List<ItemsDao> items) {
+        this.items = items;
+    }
 
     public String getEmail() {
         return email;
