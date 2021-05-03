@@ -18,7 +18,8 @@ public class UserDao {
     @Column
     private String firstName;
 
-    @Column
+    
+    @Column(unique=true)
     private String email;
 
     @Column
