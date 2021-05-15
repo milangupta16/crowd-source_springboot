@@ -42,3 +42,11 @@
 2021-05-15 14:25:58.714 328082 [http-nio-8087-exec-2] INFO  c.t.c.JwtAuthenticationController - User Login Sucessfully!
 2021-05-15 14:27:08.899 398267 [http-nio-8087-exec-5] WARN  c.t.config.JwtRequestFilter - JWT Token does not begin with Bearer String
 2021-05-15 14:27:09.652 399020 [http-nio-8087-exec-5] INFO  c.t.controller.ItemController - Item Added Successfully !
+2021-05-15 15:51:31.686 1631 [main] INFO  c.t.SpringBootJwtApplication - Starting SpringBootJwtApplication on milan-Inspiron-5547 with PID 4247 (/home/milan/crowd-source_springboot/target/classes started by milan in /home/milan/crowd-source_springboot)
+2021-05-15 15:51:31.704 1649 [main] DEBUG c.t.SpringBootJwtApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+2021-05-15 15:51:31.707 1652 [main] INFO  c.t.SpringBootJwtApplication - No active profile set, falling back to default profiles: default
+2021-05-15 15:52:18.692 861  [main] INFO  c.t.SpringBootJwtApplication - Starting SpringBootJwtApplication on milan-Inspiron-5547 with PID 4361 (/home/milan/crowd-source_springboot/target/classes started by milan in /home/milan/crowd-source_springboot)
+2021-05-15 15:52:18.696 865  [main] DEBUG c.t.SpringBootJwtApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+2021-05-15 15:52:18.698 867  [main] INFO  c.t.SpringBootJwtApplication - No active profile set, falling back to default profiles: default
+2021-05-15 15:52:26.165 8334 [main] DEBUG c.t.config.JwtRequestFilter - Filter 'jwtRequestFilter' configured for use
+2021-05-15 15:52:27.390 9559 [main] INFO  c.t.SpringBootJwtApplication - Started SpringBootJwtApplication in 9.148 seconds (JVM running for 9.741)

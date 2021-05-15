@@ -33,18 +33,18 @@ class SpringBootJwtApplicationTests {
 	void contextLoads() {
 	}
 
-	@Test
-	public void userRegistrationLoginAuthenticationDeleteTests() throws Exception{
-		log.info("User Registration test");
-		mockMvc.perform(post("/register")
-				.contentType(APPLICATION_JSON_VALUE)
-				.content("{\"firstName\":\"Foo1\", " +
-						"\"username\":\"Foo1\", "+
-						"\"lastName\":\"Bar1\", " +
-						"\"email\":\"foo1@bar.com\", " +
-						"\"password\":\"12345\"}"))
-				.andExpect(status().isOk());
-		log.info("Registration Successfull !!");
+	// @Test
+	// public void userRegistrationLoginAuthenticationDeleteTests() throws Exception{
+	// 	log.info("User Registration test");
+	// 	mockMvc.perform(post("/register")
+	// 			.contentType(APPLICATION_JSON_VALUE)
+	// 			.content("{\"firstName\":\"Foo1\", " +
+	// 					"\"username\":\"Foo1\", "+
+	// 					"\"lastName\":\"Bar1\", " +
+	// 					"\"email\":\"foo1@bar.com\", " +
+	// 					"\"password\":\"12345\"}"))
+	// 			.andExpect(status().isOk());
+	// 	log.info("Registration Successfull !!");
 //		log.info("Registration with Duplicate email test");
 //		mockMvc.perform(post("/registration")
 //				.contentType(APPLICATION_JSON_VALUE)
@@ -54,13 +54,13 @@ class SpringBootJwtApplicationTests {
 //						"\"password\":\"12345\"}"))
 //				.andExpect(status().is4xxClientError());
 
-		log.info("Login test");
-		MvcResult mvcResult = mockMvc.perform(post("/authenticate")
-				.contentType(APPLICATION_JSON_VALUE)
-				.content("{\"username\":\"Foo1\", " +
-						"\"password\":\"12345\"}"))
-				.andExpect(status().isOk())
-				.andReturn();
+		// log.info("Login test");
+		// MvcResult mvcResult = mockMvc.perform(post("/authenticate")
+		// 		.contentType(APPLICATION_JSON_VALUE)
+		// 		.content("{\"username\":\"Foo1\", " +
+		// 				"\"password\":\"12345\"}"))
+		// 		.andExpect(status().isOk())
+		// 		.andReturn();
 //		JSONObject resp = new JSONObject(mvcResult.getResponse().getContentAsString());
 //		authToken = resp.getString("token");
 //
@@ -73,7 +73,7 @@ class SpringBootJwtApplicationTests {
 //		mockMvc.perform(post("/user/delete")
 //				.header("Authorization", authToken))
 //				.andExpect(status().isOk());
-	}
+	// }
 
 
 }
