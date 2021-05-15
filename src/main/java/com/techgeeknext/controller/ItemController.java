@@ -14,10 +14,13 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @RestController
 @CrossOrigin(origins = "*")
 public class ItemController {
+    private static final Logger log = LogManager.getLogger(ItemController.class);
     @Autowired
     UserRepository userRepository;
 
@@ -40,7 +43,7 @@ public class ItemController {
         itemsDao.setReq(items.getReq());
 
         userDao.getItems().add(itemsDao);
-
+         log.info("Item Added Successfully !");
         return ResponseEntity.ok(userRepository.save(userDao));
     }
 
@@ -59,7 +62,7 @@ public class ItemController {
         itemsDao.setRequested_item(item.get());
         item.get().getPosted_items().add(itemsDao);
         userDao1.getItems().add(itemsDao);
-
+        log.info("Item Posted Sucessfully !");
         return ResponseEntity.ok(userRepository.save(userDao1));
     }
 

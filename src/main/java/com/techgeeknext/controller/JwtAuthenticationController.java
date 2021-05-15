@@ -13,11 +13,13 @@ import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @RestController
 @CrossOrigin()
 public class JwtAuthenticationController {
-
+	private static final Logger log = LogManager.getLogger(JwtAuthenticationController.class);
 	@Autowired
 	private AuthenticationManager authenticationManager;
 
@@ -35,12 +37,13 @@ public class JwtAuthenticationController {
 		final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
 
 		final String token = jwtTokenUtil.generateToken(userDetails);
-
+		log.info("User Login Sucessfully!");
 		return ResponseEntity.ok(new JwtResponse(token));
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ResponseEntity<?> saveUser(@RequestBody UserDto user) throws Exception {
+		log.info("User Registered Sucessfully!");
 		return ResponseEntity.ok(userDetailsService.save(user));
 	}
 
